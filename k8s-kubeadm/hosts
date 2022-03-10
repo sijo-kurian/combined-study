@@ -1,14 +1,14 @@
-[kubernetes-master-nodes]
-kubernetes-master ansible_host=192.168.1.200
+[master_nodes]
+k8smaster ansible_host=192.168.68.130
 
-[kubernetes-worker-nodes]
-kubernetes-worker1 ansible_host=192.168.1.201
-kubernetes-worker2 ansible_host=192.168.1.202
+[worker_nodes]
+k8sworker1 ansible_host=192.168.68.131
+k8sworker2 ansible_host=192.168.68.132
 
 
 [kubernetes:children]
-kubernetes-worker-nodes
-kubernetes-master-nodes
+worker_nodes
+master_nodes
 
 [kubernetes:vars]
 ansible_ssh_user=root
